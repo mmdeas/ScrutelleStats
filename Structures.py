@@ -1,3 +1,8 @@
+#Copyright 2013 Miguel Martinez de Aguirre <miguel.aguirre@aguirredevelopment.co.uk>
+
+"""Data structures for use in ScrutelleStats. Describe the various entities
+involved in competitions."""
+
 class Couple:
 	"""Describes a couple dancing at a specific competition."""
 	def __init__(self, name, university, number):
