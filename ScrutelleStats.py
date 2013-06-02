@@ -31,7 +31,9 @@ import argparse
 from views import *
 view_classes = View.View.__subclasses__()
 
-def initialiseViews():
+def instantiateViews():
+	"""Instantiates all available views (subclasses of View in the views folder)
+	and returns a list of successfully initialised views which can be used."""
 	views = []
 	for v in view_classes:
 		try:
@@ -41,6 +43,7 @@ def initialiseViews():
 	return views
 
 def loadView(view):
+	"""Initialises an instantiated View object."""
 	try:
 		view.initialise(args)
 		return True
@@ -53,8 +56,8 @@ if __name__ == '__main__':
 
 	#Add generic options here when necessary
 	
-	#Initialise views
-	views = initialiseViews()
+	#Instantiate views
+	views = instantiateViews()
 
 	#Give subgroup to each view with options
 	for v in views:
