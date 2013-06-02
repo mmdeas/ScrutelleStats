@@ -66,7 +66,7 @@ if __name__ == '__main__':
 			sgroup = parser.add_argument_subgroup(v.name, description)
 
 			sgroup.add_argument("--{}".format(v.optname), action='store-true', 
-				help="Show view '{}'", v.name)
+				help="Show view '{}'".format(v.name))
 			if v.has_opts:
 				v.add_options(subgroup)
 		except NotImplementedError:
